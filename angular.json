@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "scroll-animate": {
+    "editorial-scroll-animation": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/scroll-animate",
+            "outputPath": "dist/editorial-scroll-animation",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -62,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "scroll-animate:build"
+            "browserTarget": "editorial-scroll-animation:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "scroll-animate:build:production"
+              "browserTarget": "editorial-scroll-animation:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "scroll-animate:build"
+            "browserTarget": "editorial-scroll-animation:build"
           }
         },
         "test": {
@@ -88,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -110,15 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "scroll-animate:serve"
+            "devServerTarget": "editorial-scroll-animation:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "scroll-animate:serve:production"
+              "devServerTarget": "editorial-scroll-animation:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "scroll-animate"
+    }
+  },
+  "defaultProject": "editorial-scroll-animation",
+  "cli": {
+    "analytics": false
+  }
 }
